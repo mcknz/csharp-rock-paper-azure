@@ -1,0 +1,579 @@
+body
+{
+    background-color: #095e94;
+    background-image: url('/images/bg_azure.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.table-header
+{
+    background-color: #ffffff;
+}
+
+.welcome
+{
+    font-family: tahoma;
+    color: #006699;
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+a.logout
+{
+    text-decoration: none;
+    color: #006699;
+}
+
+a.logout:visited
+{
+    text-decoration: none;
+    color: #006699;
+}
+
+a.logout:hover
+{
+    text-decoration: none;
+    color: #FFCC00;
+}
+
+
+.spacer
+{
+    margin-left: 1px;
+}
+
+.navbutton
+{
+    padding: 5px 10px;
+    background-color: #006699;
+    text-align: center;
+}
+
+.navselected
+{
+    padding: 5px 10px;
+    background-color: #FFCC00;
+    text-align: center;
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.liveblock
+{
+    background-color: #006699;
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFCC00;
+    text-align: center;
+}
+
+.liveblocklink
+{
+    color: #FFCC00;
+    text-decoration: none;
+}
+.liveblocklink:visited
+{
+    color: #FFCC00;
+    text-decoration: none;
+}
+.liveblocklink:hover
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.navitem
+{
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.navitem:visited
+{
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.navitem:hover
+{
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.paragraphspace
+{
+    padding-bottom: 10px;
+}
+
+.paragraphspace2
+{
+    padding-bottom: 5px;
+}
+
+.paragraphspace-big
+{
+    padding-bottom: 15px;
+}
+
+.bluebox
+{
+    background-color: #c4e7f4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.headline1
+{
+    color: #006699;
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: left;
+}
+
+a.content1link
+{
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: none;
+}
+
+a.content1link:visited
+{
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: none;
+}
+
+a.content1link:hover
+{
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.content1
+{
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 14px;
+    text-align: left;
+}
+
+a.content1link
+{
+    color: #006699;
+    text-decoration: underline;
+}
+
+a.content1link:visited
+{
+    color: #006699;
+    text-decoration: underline;
+}
+
+a.content1link:hover
+{
+    color: #006699;
+    text-decoration: underline;
+}
+
+.subhead1
+{
+    color: #006699;
+    font-family: verdana;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: left;
+}
+
+.headline2
+{
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: left;
+}
+
+.content2
+{
+    font-family: verdana;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 12px;
+    text-align: left;
+}
+
+a.content2link
+{
+    color: #006699;
+    font-family: verdana;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 12px;
+    text-align: left;
+    text-decoration: none;
+}
+
+a.content2link:visited
+{
+    color: #006699;
+    font-family: verdana;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 12px;
+    text-align: left;
+    text-decoration: none;
+}
+
+a.content2link:hover
+{
+    color: #006699;
+    font-family: verdana;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 12px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.subhead2
+{
+    color: #006699;
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: left;
+}
+
+.headline3
+{
+    color: #006699;
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: left;
+}
+
+.postings
+{
+    padding: 2px;
+}
+
+.posts
+{
+    margin-left: 10px;
+    font-family: verdana;
+    font-size: 11px;
+    text-align: left;
+}
+
+a.postlink
+{
+    color: #006699;
+    text-decoration: none;
+}
+
+a.postlink:visited
+{
+    color: #006699;
+    text-decoration: none;
+}
+
+a.postlink:hover
+{
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+.timestamp
+{
+    font-family: verdana;
+    font-size: 10px;
+    color: #006699;
+}
+
+a.timestamplink
+{
+    color: #006699;
+    text-decoration: none;
+}
+
+a.timestamplink:visited
+{
+    color: #006699;
+    text-decoration: none;
+}
+
+a.timestamplink:hover
+{
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+a.sectionlink
+{
+    color: #006699;
+    font-family: Segoe UI;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: none;
+}
+
+a.sectionlink:visited
+{
+    color: #006699;
+    font-family: Segoe UI;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: none;
+}
+
+a.sectionlink:hover
+{
+    color: #006699;
+    font-family: Segoe UI;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.lowernav
+{
+    font-family: tahoma;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a.lownav
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.lownav:visited
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+a.lownav:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.legal
+{
+    font-family: verdana;
+    font-size: 10px;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 44px;
+    padding-right: 44px;
+}
+
+.bottom
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: verdana;
+    font-size: 10px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.columnspacer
+{
+    padding-left: 10px;
+}
+
+.failureNotification
+{
+    color: Red;
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 14px;
+    text-align: left;
+}
+
+fieldset
+{
+    border: #ccc 1px solid;
+    padding: 10px;
+}
+
+fieldset label
+{
+    display: block;
+    font-family: Verdana;
+    color: #006699;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+input[type="text"], input[type="password"]
+{
+    border: #ccc 1px solid;
+}
+
+select
+{
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 14px;
+    text-align: left;
+    border: #ccc 1px solid;
+}
+
+.resultHead
+{
+    background-color: #70C5E3;
+    cursor: default;
+}
+
+.resultColumn, .resultTeamName
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: default;
+}
+
+.resultTeamName
+{
+    cursor: pointer;
+}
+
+.teamDropDown
+{
+}
+
+.leftAlign
+{
+    text-align: left;
+}
+
+.rightAlign
+{
+    text-align: right;
+}
+
+.center
+{
+    text-align: center;
+}
+
+div#gameLog
+{
+    font-family: Lucida Console, Courier, monospace !important;
+    font-size: 11px !important;
+    width: 427px;
+    height: 353px;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    border-style: inset;
+    border-width: 1px;
+    padding-left: 5px;
+    background-color: White;
+    position: absolute;
+}
+
+.gameLogHighlight
+{
+    font-weight: bold;
+    color: White;
+    background-color: navy;
+}
+
+table#botList
+{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 8px;
+    border: #ccc 1px solid;
+}
+
+table#resultTable
+{
+    display: none;
+    margin-top: 20px;
+}
+
+.file-input-span
+{
+    position: relative;
+    width: 150px;
+    height: 23px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+}
+
+.file-input
+{
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "alpha(opacity=0)";
+    -khtml-opacityk: 0;
+    -moz-opacity: 0;
+    width: 30px;
+    cursor: default;
+}
+
+input#botAddButton
+{
+    float: right;
+    position: relative;
+    z-index: 3;
+}

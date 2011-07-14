@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RockPaperAzure.master.cs"
+    Inherits="Compete.Site.Views.RockPaperAzure" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Bot Lab</title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    <link rel="stylesheet" type="text/css" href="/styles/rpa.css" media="screen" />
+</head>
+<body>
+    <div align="center">
+        <a name="top"></a>
+        <table border="0" cellpadding="0" cellspacing="0" width="998" bgcolor="#ffffff">
+            <tr>
+                <td>
+                    <!-- header table -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="table-header">
+                        <tr>
+                            <td align="left">
+                                <a href="http://www.rockpaperazure.com/">
+                                    <img src="/images/logo_rpa_botlab.gif" width="500" height="64" vspace="20" hspace="20"
+                                        border="0" alt="Bot Lab" /></a>
+                            </td>
+                            <td align="right">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td valign="bottom" align="right">
+                                            <a href="http://www.microsoft.com/windowsazure/" target="microsoft">
+                                                <img src="/images/logo_windows_azure.gif" width="175" height="27" hspace="18" vspace="10"
+                                                    border="0" alt="Windows Azure" title="Find out more about Windows Azure!" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- end header table -->
+                    <!-- Navigation -->
+                    <div align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="998">
+                            <tr>
+                                <td class="liveblock" width="350" align="center">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- End Navigation -->
+                    <!-- Header Image -->
+                    <!-- Light Blue Area -->
+                    <div align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="998" class="bluebox">
+                            <tr>
+                                <td align="center">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="911">
+                                        <tr>
+                                            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- End Light Blue Area -->
+                    <!-- Grey area -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#999999">
+                        <tr>
+                            <td>
+                                <div align="center">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="960" class="bottom">
+                                        <tr>
+                                            <td width="654" align="left">
+                                                &copy; 2011 Microsoft Corporation. All Rights Reserved. Read our <a class="lownav" style="text-decoration: underline;"
+                                                    href="http://privacy.microsoft.com/en-us/fullnotice.mspx" target="_blank">privacy
+                                                    policy</a> and <a href="http://www.rockpaperazure.com/officialrules.aspx" id="A1" class="lownav" style="text-decoration: underline;">
+                                                        legal information</a>.
+                                                <br />
+                                                Question or Comment? Contact us at <a href="mailto:rockpaperazure@microsoft.com" class="lownav" style="text-decoration: underline;">rockpaperazure@microsoft.com</a>
+                                            </td>
+                                            <td width="286" align="right">
+                                                <a href="http://www.microsoft.com/" target="microsoft">
+                                                    <img src="/images/logo_microsoft.gif" width="113" height="18" border="0" alt="Microsoft Corporation" /></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End grey area -->
+                </td>
+            </tr>
+        </table>
+    </div>
+    <asp:ContentPlaceHolder ID="ModalContent" runat="server" />
+    <asp:ContentPlaceHolder ID="ErrorOverlay" runat="server" /></body>
+</html>

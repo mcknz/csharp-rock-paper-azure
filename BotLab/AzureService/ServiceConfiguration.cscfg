@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ServiceConfiguration serviceName="CompeteTest" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+  <Role name="BotLabSite">
+    <Instances count="1" />
+  </Role>
+</ServiceConfiguration>
