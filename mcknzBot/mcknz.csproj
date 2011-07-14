@@ -31,13 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Compete.Bot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ref\Compete.Bot.dll</HintPath>
+    <Reference Include="Compete.Bot">
+      <HintPath>lib\Compete.Bot.dll</HintPath>
     </Reference>
-    <Reference Include="RockPaperScissorsPro.RPA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ref\RockPaperScissorsPro.RPA.dll</HintPath>
+    <Reference Include="RockPaperScissorsPro.RPA">
+      <HintPath>lib\RockPaperScissorsPro.RPA.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
