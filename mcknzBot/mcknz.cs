@@ -12,14 +12,27 @@ namespace RockPaperAzure
         private Move _opponentLastMove;
         private int _pointsPrev;
         private int _tieStreak;
-        private int _tieStreakCheckRandomMax;
-        private int? _tieStreakCheck;
+        private bool _tieBreakAttempted; 
         private int _endGamePoints;
         private Move _lastEndGameThrow;
+        private int _dynamiteUsed;
+        private int _waterBalloonUsed;
 
-        // represents "ideal" upper bound random number for throwing Dynamite on ties, per 1000 points
-        private double _tieStreakRandomMaxCoefficient  = 0.004;
-        private int _tieStreakMin = Moves.GetRandomNumber(1) + 1;
+        private Dictionary<int, int> _tieStreakOdds = new Dictionary<int, int>();
+        private Dictionary<int,int> _tieStreakOddsOrig = new Dictionary<int,int>
+        {
+            {10,1},
+            {9,1},
+            {8,1},
+            {7,1},
+            {6,1},
+            {5,1},
+            {4,2},
+            {3,3},
+            {2,6},
+            {1,8}
+        };
+
         private int _endGameOffset = 50;
         private int _dynamiteRemainingOffset = Moves.GetRandomNumber(3);
 
@@ -27,9 +40,16 @@ namespace RockPaperAzure
         {
             if (you.NumberOfDecisions == 0)
             {
-                you.Log.AppendLine("v9");
-                _tieStreakCheckRandomMax = (int)Math.Round(rules.PointsToWin * _tieStreakRandomMaxCoefficient);
-                _endGamePoints = rules.PointsToWin - _endGameOffset;
+                int pointsToWin = rules.PointsToWin;
+                you.Log.AppendLine("v10");
+                _endGamePoints = pointsToWin - _endGameOffset;
+                double calc;
+                foreach (var odd in _tieStreakOddsOrig)
+                {
+                    calc = odd.Value > 2 ? (odd.Value * .001 * pointsToWin) / (0.01 * rules.StartingDynamite) : odd.Value;
+                    _tieStreakOdds.Add(odd.Key, (int)Math.Round(calc, MidpointRounding.AwayFromZero));
+                    you.Log.AppendLine(string.Format("{0}:{1}",odd.Key, _tieStreakOdds[odd.Key]));
+                }
             }
 
             _hasDynamite = you.DynamiteRemaining > _dynamiteRemainingOffset;
@@ -50,34 +70,54 @@ namespace RockPaperAzure
             {
                 if (points == _pointsPrev)
                 {
+                    int odds;
+
                     _tieStreak++;
-                    if (!_tieStreakCheck.HasValue)
+
+                    you.Log.AppendLine(string.Format("points: {0}", points));
+                    you.Log.AppendLine(string.Format("pointsPrev: {0}", points));
+                    you.Log.AppendLine(string.Format("_tieBreakAttempted: {0}", _tieBreakAttempted));
+                    you.Log.AppendLine(string.Format("_tieStreak: {0}", _tieStreak));
+
+                    if(_tieBreakAttempted)
                     {
-                        _tieStreakCheck = Moves.GetRandomNumber(_tieStreakCheckRandomMax) + _tieStreakMin;
-                        //you.Log.AppendLine(string.Format("_tieStreakCheck: {0}", _tieStreakCheck));
+                        int moveNum = Moves.GetRandomNumber(3);
+                        you.Log.AppendLine(string.Format("moveNum: {0}", moveNum));
+                        switch (moveNum)
+                        {
+                            case 0: return Moves.WaterBalloon;
+                            case 1: return _hasDynamite ? ThrowDynamite() : null;
+                            case 2: return null;
+                        }
+                    }
+                    else
+                    {
+                        if(_tieStreak > _tieStreakOdds.Count)
+                        {
+                            odds = 0;
+                        }
+                        else
+                        {
+                            odds = Moves.GetRandomNumber(_tieStreakOdds[_tieStreak]);
+                        }
+
+                        you.Log.AppendLine(string.Format("odds: {0}", odds));
+                    
+
+                        if(odds == 0 && _hasDynamite)
+                        {
+                            _tieBreakAttempted = true;
+                            return ThrowDynamite();
+                        }
                     }
                 }
                 else
                 {
                     _tieStreak = 0;
-                    _tieStreakCheck = null;
-                }
-                if (_tieStreak == _tieStreakCheck && _hasDynamite)
-                {
-                    return Moves.Dynamite;
-                }
-                if (_tieStreak > _tieStreakCheck && _opponentLastMove == Moves.Dynamite || _opponentLastMove == Moves.WaterBalloon)
-                {
-                    switch (Moves.GetRandomNumber(2))
-                    {
-                        case 0: return Moves.WaterBalloon;
-                        case 1: return _hasDynamite ? Moves.Dynamite: null;
-                        case 2: return null;
-                    }
+                    _tieBreakAttempted = false;
                 }
                 _pointsPrev = points;
             }
-
             return null;
         }
 
@@ -92,7 +132,7 @@ namespace RockPaperAzure
                     streak++;
                 }
 
-                int streakCheck = Moves.GetRandomNumber(1);
+                int streakCheck = Moves.GetRandomNumber(2);
 
                 _moveStreak.Clear();
                 _moveStreak.Add(_opponentLastMove, streak);
@@ -113,7 +153,7 @@ namespace RockPaperAzure
                 if(Moves.GetRandomNumber(2) == 0 && _lastEndGameThrow != Moves.Dynamite)
                 {
                     _lastEndGameThrow = Moves.Dynamite;
-                    return Moves.Dynamite;
+                    return ThrowDynamite();
                 }
                 else
                 {
@@ -139,7 +179,7 @@ namespace RockPaperAzure
             }
             if (_opponentLastMove == Moves.Dynamite)
             {
-                return Moves.WaterBalloon;
+                return ThrowWaterBalloon();
             }
             return null;
         }
@@ -149,9 +189,17 @@ namespace RockPaperAzure
             return Moves.GetRandomMove();
         }
 
-        private bool IsRandom()
+        private Move ThrowDynamite()
         {
-            return Moves.GetRandomNumber(1) == 0;
+            _dynamiteUsed++;
+            return Moves.Dynamite;
         }
+
+        private Move ThrowWaterBalloon()
+        {
+            _waterBalloonUsed++;
+            return Moves.WaterBalloon;
+        }
+
     }
 }
